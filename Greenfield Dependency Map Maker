@@ -1,0 +1,75 @@
+# TOON File: `Greenfield Internal Dependency Maker`
+
+**Purpose:**
+Generate the **Program Internal Dependency Map (`A1p1s1f0.toon`)** for a new project using SCIS Phase 0 information.
+
+---
+
+## **Inputs (to be provided by the user)**
+
+1. **`A1p0s0f0.md` – Greenfield Start / Program Summary**
+
+   * Contains high-level program information, goals, and phase guidance.
+
+2. **`A1p0s0f1.md` – Flat File Map**
+
+   * Lists all sections, files, and their intended purpose.
+
+3. **`A1p0s0f4.toon` – Component Map**
+
+   * Lists all program components, their IDs, and relationships within sections.
+
+4. **`A1p0s0f5.toon` – Non-Component Map**
+
+   * Lists all helpers, utilities, and scripts relevant to the program.
+
+---
+
+## **Output**
+
+* **`A1p1s1f0.toon` – Program Internal Dependency Map**
+
+  * Each component and non-component mapped to its dependencies.
+  * Section-to-section and intra-program relationships clearly defined.
+  * Unique IDs for each entity to allow deterministic referencing.
+  * Inter-program dependencies are flagged (if multiple programs exist in the folder).
+
+---
+
+## **LLM Instructions**
+
+1. **Read Inputs:**
+
+   * Parse the user-provided `f0` and `f1` to understand the program structure.
+   * Use `f4` and `f5` to identify all components and non-components.
+
+2. **Dependency Mapping:**
+
+   * For each component:
+
+     * List all components and non-components it depends on.
+     * Include MCP endpoints if relevant.
+   * For non-components:
+
+     * List any components or other non-components they assist.
+   * Maintain section boundaries (dependencies should indicate source and target sections).
+
+3. **Normalization & Deduplication:**
+
+   * Ensure each dependency is listed once.
+   * Assign consistent unique IDs for deterministic generation.
+
+4. **Formatting:**
+
+   * Output should be a `.toon` file, following SCIS Phase 1 conventions.
+   * Include a header referencing the inputs used (`f0`, `f1`, `f4`, `f5`).
+   * Provide a brief note section describing any assumptions made during dependency mapping.
+
+---
+
+## **Usage Notes**
+
+* Only **Phase 0 files (`f0`, `f1`, `f4`, `f5`)** are required.
+* Dependencies must reflect the program **as currently designed**; this file does not predict future additions.
+* Can be re-run anytime new components/non-components are added to the program.
+
