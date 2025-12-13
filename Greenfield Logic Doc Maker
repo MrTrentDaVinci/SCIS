@@ -1,0 +1,83 @@
+# TOON File: `Greenfield Logic Doc Maker`
+
+**Purpose:**
+Generate the **Logic Map Explainer (`A1p0s0f8.md`)** and the **Logic Determinization Map (`A1p0s0f9.toon`)** for a new SCIS project using Phase 0 files.
+
+---
+
+## **Inputs (to be provided by the user)**
+
+1. **`A1p0s0f0.md` – Greenfield Start / Program Summary**
+
+   * Contains high-level program objectives, phase guidance, and usage instructions.
+
+2. **`A1p0s0f1.md` – Flat File Map**
+
+   * Lists all sections, files, and their intended purposes.
+
+3. **`A1p0s0f4.toon` – Component Map**
+
+   * Lists all program components and their IDs.
+
+4. **`A1p0s0f5.toon` – Non-Component Map**
+
+   * Lists helpers, utilities, and scripts.
+
+5. **`A1p1s1f0.toon` – Program Internal Dependency Map**
+
+   * Details dependencies between components and non-components.
+
+---
+
+## **Outputs**
+
+1. **`A1p0s0f8.md` – Logic Map Explainer**
+
+   * Human-readable description of program logic across sections and components.
+   * Notes guidance for AI on logical flow and operational rules.
+   * Highlights critical paths and inter-component interactions.
+
+2. **`A1p0s0f9.toon` – Logic Determinization Map**
+
+   * Machine-readable map representing deterministic logical flow.
+   * Encodes sequence, dependencies, and conditions for program execution.
+   * Supports automated validation and future updates.
+
+---
+
+## **LLM Instructions**
+
+1. **Read Inputs:**
+
+   * Parse `f0` for program goals and constraints.
+   * Use `f1` to understand the structure of sections and files.
+   * Use `f4` and `f5` to identify all components and non-components.
+   * Use `f0` and `f1` to establish contextual understanding.
+   * Use `A1p1s1f0.toon` to understand internal dependencies.
+
+2. **Logic Mapping:**
+
+   * For each component, list its operational logic in sequence.
+   * Capture how components interact with non-components.
+   * Identify loops, conditional paths, and sequence dependencies.
+
+3. **Determinization:**
+
+   * Convert logical flow into a machine-readable format (`.toon`).
+   * Use unique IDs for components, non-components, and sections.
+   * Ensure deterministic paths and clearly mark optional or conditional flows.
+
+4. **Documentation:**
+
+   * Summarize logic flow in `A1p0s0f8.md` with clear, human-readable explanations.
+   * Include references to sections, files, and dependencies.
+   * Provide notes for AI on how to extend or modify logic safely in the future.
+
+---
+
+## **Usage Notes**
+
+* Only **Phase 0 and Phase 1 internal dependency files** are required.
+* Can be re-run if components, non-components, or dependencies are updated.
+* Ensures AI-generated files follow deterministic execution rules.
+Do you want me to create that next?
