@@ -228,17 +228,4 @@ If any check fails, the file map must be regenerated.
 
 ---
 
-## 13. Next Step After File Map
-
-Once `A#p0s0f1.md` is complete and validated:
-
-**Next file to generate:**
-
-> `A#p0s0f2` — Program Architecture Overview
-> (or directly Component Maps if architecture is trivial)
-
-This decision is program-specific and must be justified.
-
----
-
 ## End of File
