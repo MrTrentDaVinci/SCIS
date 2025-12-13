@@ -1,0 +1,57 @@
+{
+  "file_name": "Greenfield NCCF Maker",
+  "description": "Instructions to generate A1p0s0f7.toon, the NCCF Template containing program-wide component contracts",
+  "phase": "A1p0",
+  "section": "s0",
+  "required_inputs": [
+    "A1p0s0f0.md", 
+    "A1p0s0f1.md"
+  ],
+  "template": {
+    "header": {
+      "ID_format": "A1p0s0f7-<ComponentID>",
+      "phase": "A1p0",
+      "section": "s0"
+    },
+    "fields": [
+      "Component Name",
+      "Purpose",
+      "Inputs",
+      "Outputs",
+      "Constraints",
+      "Dependencies",
+      "MCP Integrations"
+    ],
+    "structure": [
+      {
+        "component": "<Name of component>",
+        "purpose": "<Brief purpose description>",
+        "inputs": ["<List of inputs>"],
+        "outputs": ["<List of outputs>"],
+        "constraints": ["<Any constraints>"],
+        "dependencies": ["<Other components or external dependencies>"],
+        "mcp_integrations": ["<External MCP / API endpoints integrated>"]
+      }
+    ]
+  },
+  "rules": [
+    "Follow SCIS phase-lock rules",
+    "Use deterministic naming for Component IDs",
+    "Ensure each component listed has a corresponding entry in the Component Map (A1p0s0f4.toon)",
+    "Validate inputs and outputs match existing components and non-components",
+    "Include MCP integrations if the component interacts with external endpoints",
+    "Avoid duplicate entries; each component appears once"
+  ],
+  "file_dependencies": [
+    "A1p0s0f0.md",
+    "A1p0s0f1.md",
+    "A1p0s0f4.toon",
+    "A1p0s0f5.toon"
+  ],
+  "generation_order_hint": "Generate Component Map (f4) and Non-Component Map (f5) before NCCF (f7)",
+  "notes": [
+    "This TOON file is only for new programs (Greenfield projects)",
+    "If multiple programs exist in the folder, generate separate NCCF entries per program",
+    "Ensure constraints and dependencies are normalized according to SCIS NCCF rules"
+  ]
+}
