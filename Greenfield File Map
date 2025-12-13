@@ -1,0 +1,96 @@
+
+# **Greenfield LLM File Generation Map — A1+ Overview**
+
+### **Purpose**
+
+This map shows which files are required as **inputs** and which files can be generated as **outputs** by an LLM. It also shows the sequential flow for a Greenfield project (new program).
+
+---
+
+## **Phase 0 — Entry, Maps, NCCF, Logic Determinization (A1p0)**
+
+| Input                                         | Output                                                                     | Notes                                                                    |
+| --------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `A1p0s0f0.md` (Greenfield Start)              | `A1p0s0f1.md` (Flat File Map)                                              | Generates structured section/file hierarchy for the program.             |
+| `A1p0s0f0.md` + `A1p0s0f1.md`                 | `A1p0s0f4.toon` (Component Map)                                            | Section-level component mapping.                                         |
+| `A1p0s0f0.md` + `A1p0s0f1.md`                 | `A1p0s0f5.toon` (Non-Component Map)                                        | Helpers, utilities, scripts.                                             |
+| `A1p0s0f0.md` + `A1p0s0f1.md`                 | `A1p0s0f6.toon` (MCP Handler Map)                                          | External endpoints, handlers, integration points.                        |
+| `A1p0s0f0.md` + `A1p0s0f1.md`                 | `A1p0s0f7.toon` (NCCF Template)                                            | Component contracts: purpose, inputs/outputs, constraints, dependencies. |
+| `A1p0s0f0.md` + `A1p0s0f7.toon`               | `A1p0s0f9.toon` (Logic Determinization Map)                                | Defines logical flow across sections.                                    |
+| Optional: `A1p0s0f0.md` + GitHub instructions | `A1p0s0f8.md` (Logic Map Explainer) + `A1p0s0f10.toon` (Program MEM Entry) | Explains logic and provides local context for LLM.                       |
+
+---
+
+## **Phase 1 — Internal Dependencies / Legacy Analysis (A1p1)**
+
+| Input                             | Output                                            | Notes                                          |
+| --------------------------------- | ------------------------------------------------- | ---------------------------------------------- |
+| `A1p0s0f1.md` + `A1p0s0f4-5.toon` | `A1p1s1f0.toon` (Program Internal Dependency Map) | Maps dependencies between sections/components. |
+| `A1p1s1f0.toon`                   | `A1p1s1f1.toon` (Section-to-Section Dependencies) | Determines flow between sections.              |
+| Optional legacy input             | `A1p1s1f2.toon` (Legacy Mapping)                  | Used when remaking an existing program.        |
+| Multi-program folder input        | `A1p1s1f3.toon` (Cross-Program Dependencies)      | Links between programs in same folder.         |
+
+---
+
+## **Phase 2 — Core Components / Backend (A1p2)**
+
+| Input                             | Output                                              | Notes                                   |
+| --------------------------------- | --------------------------------------------------- | --------------------------------------- |
+| Section Summary (`A1p2s2f0.md`)   | `A1p2s2f1.toon` (Component Registry)                | Registers backend components.           |
+| Section Summary + `A1p0s0f5.toon` | `A1p2s2f2.toon` (Non-Component Registry)            | Registers utilities and helper scripts. |
+| Registries + developer input      | `A1p2s2f3.py` (Core Backend Scripts)                | Generates backend code.                 |
+| Registries + NCCF                 | `A1p2s2f4.json` (Component-Specific NCCF Instances) | Component-level contracts for backend.  |
+
+---
+
+## **Phase 3 — UI / API / MCP (A1p3)**
+
+| Input                           | Output                                                                    | Notes                                          |
+| ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| Section Summary (`A1p3s3f0.md`) | `A1p3s3f1.toon` (Component Registry)                                      | Frontend/UI components.                        |
+| Component Registry              | `A1p3s3f2.toon` (MCP Handler Registry)                                    | API endpoints and integration points.          |
+| Registries + NCCF               | `A1p3s3f3.py/ts/go` (Frontend Scripts) + `A1p3s3f4.json` (NCCF Instances) | Generates UI/API code and component contracts. |
+| Developer/LLM instructions      | `A1p3s3f5.md` (API & MCP Integration Notes)                               | Optional documentation.                        |
+
+---
+
+## **Phase 4 — Testing & Debugging (A1p4)**
+
+| Input                              | Output                                                         | Notes                                    |
+| ---------------------------------- | -------------------------------------------------------------- | ---------------------------------------- |
+| Component/Non-Component Registries | `A1p4s6f0.md` (Testing Plan)                                   | Generates test cases and IDs.            |
+| Testing Plan                       | `A1p4s6f1.py` (Test Runner)                                    | Safe execution environment.              |
+| Test Runner + MEM                  | `A1p4s6f2.toon` (MEM Test Registry)                            | Stores structured outcomes.              |
+| Optional LLM instructions          | `A1p4s6f3.py` (Debug Tools) + `A1p4s6f4.md` (Debug Guidelines) | Debugging and phase completion guidance. |
+
+---
+
+## **Phase 5+ — Extensions / Optional Modules (A1p5)**
+
+| Input                        | Output                                                   | Notes                              |
+| ---------------------------- | -------------------------------------------------------- | ---------------------------------- |
+| Extension requirements       | `A1p5s7f0.md` (Optional Feature Docs)                    | Explains new features.             |
+| Registries                   | `A1p5s7f1-2.toon` (Component & Non-Component Registries) | Registers optional components.     |
+| Developer input + Registries | `A1p5s7f3.py/ts/go` (Optional Scripts)                   | Plugin/optional module code.       |
+| NCCF                         | `A1p5s7f4.json` (NCCF Instances for Extensions)          | Contracts for optional components. |
+
+---
+
+## **Phase 8-9 — Documentation / Glossary (A1p8-A1p9)**
+
+| Input             | Output                                           | Notes                              |
+| ----------------- | ------------------------------------------------ | ---------------------------------- |
+| Program files     | `A1p8s8f0.md` (Program Documentation & Diagrams) | Human-readable documentation.      |
+| Component mapping | `A1p8s8f1.toon` (Component-to-Asset Mappings)    | Asset/component relationships.     |
+| Program files     | `A1p9s9f0.md` (Glossary & Definitions)           | Term definitions and explanations. |
+| Program files     | `A1p9s9f1.toon` (Constants/Term Reference)       | Machine-readable reference.        |
+
+---
+
+### **Summary Notes for LLMs**
+
+1. Always start with `A1p0s0f0.md` and `A1p0s0f1.md` as the foundation.
+2. Generate downstream files sequentially, respecting dependencies.
+3. Optional GitHub instructions can override or supplement automated generation.
+4. Phase 1+ files rely on Phase 0 outputs; Phases 2-5 depend on registries/NCCF.
+5. Documentation and glossary (A1p8-A1p9) are generated after core program is stable.
