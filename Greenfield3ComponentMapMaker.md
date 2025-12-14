@@ -1,3 +1,4 @@
+# LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield3ComponentMapMaker.md
 # **Greenfield Component Map Maker**
 
 **SCIS v4.x — Program-Local Generation Contract**
