@@ -94,3 +94,122 @@ This map shows which files are required as **inputs** and which files can be gen
 3. Optional GitHub instructions can override or supplement automated generation.
 4. Phase 1+ files rely on Phase 0 outputs; Phases 2-5 depend on registries/NCCF.
 5. Documentation and glossary (A1p8-A1p9) are generated after core program is stable.
+
+Perfect! Let’s visualize the **Greenfield project file generation flow** so it’s clear how inputs and TOON instructions create all A1 files.
+
+---
+
+## **Greenfield SCIS File Generation Flow Diagram**
+
+```text
++-----------------------+
+|   User Inputs         |
+|-----------------------|
+| A1p0s0f0.md           |  <-- Greenfield Start / Program Summary
+| A1p0s0f1.md           |  <-- Flat File Map
+| A1p0s0f4.toon         |  <-- Component Map
+| A1p0s0f5.toon         |  <-- Non-Component Map
+| Optional: f9.toon     |  <-- Pre-generated Logic Determinization Map
+| Optional: f2.toon     |  <-- Legacy Mapping
++-----------+-----------+
+            |
+            v
++-----------------------+
+| Greenfield Master TOON|  <-- Reads all inputs
+|-----------------------|
+| Instructions for LLM: |
+| - Generate any file   |
+| - Maintain IDs, logic |
+| - Map dependencies    |
+| - Validate against   |
+|   Flat File Map       |
++-----------+-----------+
+            |
+            v
++-----------------------+
+| Phase 0: Entry & Maps |
+|-----------------------|
+| f7.toon (NCCF)        |
+| f8.md (Logic Explainer)|
+| f9.toon (Logic Map)   |
+| f10.toon (MEM Entry)  |
+| f11.md (File Header)  |
+| f12.md (Phase-Lock)   |
+| f13.md (Deterministic Rules)
++-----------+-----------+
+            |
+            v
++-----------------------+
+| Phase 1: Dependencies |
+|-----------------------|
+| f0.toon (Internal Dep)|
+| f1.toon (Section-Section Dep)|
+| f2.toon (Legacy Map)  |
+| f3.toon (Cross-Program)|
++-----------+-----------+
+            |
+            v
++-----------------------+
+| Phase 2: Core Components |
+|---------------------------|
+| f0.md (Section Summary)  |
+| f1.toon (Component Registry)|
+| f2.toon (Non-Component)  |
+| f3.py (Backend Scripts)  |
+| f4.json (Component NCCFs)|
++-----------+---------------+
+            |
+            v
++---------------------------+
+| Phase 3: UI / API / MCP   |
+|---------------------------|
+| f0.md (Section Summary)   |
+| f1.toon (UI Components)   |
+| f2.toon (MCP Handlers)    |
+| f3.py/ts/go (UI Scripts)  |
+| f4.json (NCCF Instances)  |
+| f5.md (API/MCP Notes)     |
++-----------+---------------+
+            |
+            v
++---------------------------+
+| Phase 4: Testing & Debug  |
+|---------------------------|
+| f0.md (Test Plan)          |
+| f1.py (Test Runner)        |
+| f2.toon (MEM Test Registry)|
+| f3.py (Debug Tools)        |
+| f4.md (Debug Guidelines)   |
++-----------+---------------+
+            |
+            v
++---------------------------+
+| Phase 5+: Extensions       |
+|---------------------------|
+| f0.md (Optional Docs)      |
+| f1.toon (Component Registry)|
+| f2.toon (Non-Component)    |
+| f3.py/ts/go (Optional Scripts)|
+| f4.json (NCCFs)            |
++-----------+---------------+
+            |
+            v
++---------------------------+
+| Documentation / Glossary  |
+|---------------------------|
+| f0.md (Program Docs)       |
+| f1.toon (Component-Asset)  |
+| f0.md (Glossary/Definitions)|
+| f1.toon (Constants Table)  |
++---------------------------+
+```
+
+---
+
+### **How to read this diagram**
+
+1. **User inputs** feed the TOON file.
+2. **Greenfield Master TOON** acts as the central LLM instruction set.
+3. **Phase-by-phase generation** ensures proper order: Entry → Dependencies → Core Components → UI/API → Testing → Extensions → Docs.
+4. **Optional inputs** (like legacy mappings) are only needed if the project is remaking an old system.
+5. **Output files** can be generated **one at a time** or iteratively, as needed.
