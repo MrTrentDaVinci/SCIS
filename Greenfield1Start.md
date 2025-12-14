@@ -1,4 +1,4 @@
-# The Purpose of this file is to make file: A1p0s0f0.md
+# File: A1p0s0f0.md
 
 ## Title: **SCIS Greenfield Start**
 
