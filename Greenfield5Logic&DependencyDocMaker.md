@@ -1,3 +1,4 @@
+# LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield5Logic&DependencyDocMaker.md
 # TOON File: `Greenfield Logic & Dependency Doc Maker`
 
 **Purpose:**
