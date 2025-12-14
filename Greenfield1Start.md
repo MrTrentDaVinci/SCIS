@@ -1,4 +1,4 @@
-
+#LLM friedly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield1Start.md
 # File: A1p0s0f0.md
 
 ## Title: **SCIS Greenfield Start**
