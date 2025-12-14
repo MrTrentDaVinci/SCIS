@@ -1,4 +1,3 @@
-
 # **Greenfield LLM File Generation Map — A1+ Overview**
 
 ### **Purpose**
@@ -95,7 +94,7 @@ This map shows which files are required as **inputs** and which files can be gen
 4. Phase 1+ files rely on Phase 0 outputs; Phases 2-5 depend on registries/NCCF.
 5. Documentation and glossary (A1p8-A1p9) are generated after core program is stable.
 
-Perfect! Let’s visualize the **Greenfield project file generation flow** so it’s clear how inputs and TOON instructions create all A1 files.
+
 
 ---
 
