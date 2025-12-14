@@ -25,7 +25,7 @@ The purpose of this program is to:
 
 > *[Describe in one or two plain-language sentences what the program exists to do and why it matters.]*
 
-The program’s value should be understandable without reference to implementation details, technical architecture, or internal mechanisms.
+The program's value should be understandable without reference to implementation details, technical architecture, or internal mechanisms.
 
 ---
 
@@ -81,15 +81,29 @@ These exclusions are binding and prevent scope creep during later phases.
 
 ### 6.1 System Role
 
-At a high level, this system’s role is to:
+At a high level, this system's role is to:
 
 * *[Describe what the system sits between, coordinates, mediates, or enables]*
 
-This defines the system’s **position in the larger environment**, not its internal structure.
+This defines the system's **position in the larger environment**, not its internal structure.
 
-### 6.2 High-Level Interaction Flow
+### 6.2 System Architecture Pattern
 
-The system’s abstract interaction or control flow can be described as:
+This system follows a **[monolithic / coordination / pipeline / mediation / hybrid]** pattern.
+
+**If coordination/mediation:**
+* **Upstream systems:** *[What systems/sources provide input to this system]*
+* **Downstream systems:** *[What systems/models this system controls or coordinates]*
+* **Mediation strategy:** *[How this system transforms, enriches, or controls the flow between upstream and downstream]*
+
+**If monolithic:**
+* *[Describe the system's self-contained nature and primary interfaces]*
+
+This declaration constrains how the File Map and Component Map will be structured.
+
+### 6.3 High-Level Interaction Flow
+
+The system's abstract interaction or control flow can be described as:
 
 > *[Input / Trigger → Transformation / Mediation → Output / Effect]*
 
@@ -130,7 +144,7 @@ These concepts form the **shared vocabulary** for all subsequent SCIS maps and c
 
 ### 9.1 State
 
-For this program, “state” refers to:
+For this program, "state" refers to:
 
 * *[e.g., session state, world state, configuration, derived knowledge]*
 
@@ -151,6 +165,21 @@ The program:
 * **Owns:** *[What it is responsible for]*
 * **Observes:** *[What it reads or reacts to but does not control]*
 * **Ignores:** *[What is explicitly out of scope]*
+
+### 9.4 Representation vs Execution
+
+This system operates on:
+
+* **[Direct execution]** - acts directly on real entities, data, or physical systems
+* **[Symbolic representation]** - acts on models, abstractions, or representations of entities
+* **[Mixed]** - *[describe the boundary between symbolic and direct execution]*
+
+**If symbolic or mixed:**
+* What remains symbolic: *[e.g., visual layouts, semantic concepts, domain knowledge]*
+* What gets executed/realized: *[e.g., generated text, API calls, concrete outputs]*
+* Why this boundary exists: *[e.g., efficiency, safety, model limitations]*
+
+This declaration is critical for understanding what the system "knows" versus what it "does."
 
 ---
 
@@ -211,6 +240,31 @@ Measurements may influence the system through:
 
 Any adaptive behavior must remain within declared constraints.
 
+### 12.3 Structural Evolution
+
+Beyond parameter tuning or configuration changes, this system **[may / may not]** evolve its structure over time.
+
+**If structural evolution is allowed:**
+
+The system may evolve through:
+* **[New vocabulary/concepts]** - *[e.g., learning new domain terms, token definitions]*
+* **[New rules/constraints]** - *[e.g., derived semantic rules, safety boundaries]*
+* **[New components/capabilities]** - *[e.g., specialized agents, processing modes]*
+* **[Retired elements]** - *[e.g., deprecated concepts, obsolete rules]*
+
+**Governance mechanism:**
+* *[e.g., automated validation in sandbox, human approval, confidence thresholds]*
+* *[Who/what has authority to propose vs approve structural changes]*
+
+**Scope limits:**
+* *[What kinds of structural changes are forbidden]*
+* *[Safeguards against unbounded growth]*
+
+**If no structural evolution:**
+* *[State why the system's structure is fixed after initial deployment]*
+
+This declaration informs whether the Component Map will include evolution mechanisms.
+
 ---
 
 ## 13. Risks, Safeguards, and Scope Control
@@ -228,7 +282,7 @@ Potential risks or failure patterns include:
 The following guardrails apply:
 
 * *[Limits on automation, authority, data, or complexity]*
-* *[Rules such as “do not build unless forced”]*
+* *[Rules such as "do not build unless forced"]*
 
 These rules are binding unless explicitly revised.
 
@@ -269,6 +323,12 @@ The next file to be created for this program is:
 
 This file will define the **structural layout** of the program only.
 It must be generated using the SCIS **Greenfield Map Rules** and must not introduce components, logic, or implementation details.
+
+After the File Map is complete, the following file will be created:
+
+> **A1p0s0f2 — Component Map**
+
+This will declare the major functional components, their responsibilities, and their relationships — still without implementation.
 
 ---
 
