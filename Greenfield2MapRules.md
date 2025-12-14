@@ -1,3 +1,4 @@
+# LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield2MapRules.md
 # The purpose of this file is to make the file A1p0s0f1.md using the A1p0s0f0.md
 
 ## Title: **SCIS Greenfield Map Rules**
