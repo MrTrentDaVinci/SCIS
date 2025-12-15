@@ -1,5 +1,8 @@
 #LLM friedly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield1Start.md
-# File: A1p0s0f0.md
+
+---
+
+# File: A1p0s0f0.md file maker
 
 ## Title: **SCIS Greenfield Start**
 
@@ -14,8 +17,15 @@
 This file marks the formal start of a new program developed using the SCIS framework.
 The program is being designed from a greenfield state, meaning no existing code, architecture, or implementation is assumed.
 
-All subsequent files, structures, and implementation decisions must derive from the intent, constraints, and declarations made here.
-No code, components, logic, or dependencies are defined at this stage.
+All subsequent files, structures, components, non-components, logic, tools, and integrations must derive from the intent, constraints, **and measurement commitments** declared here.
+
+At this stage:
+
+* No code exists
+* No components or non-components are defined
+* No metrics are instantiated
+
+However, this file **binds the program to full metric coverage** for all future declared elements.
 
 ---
 
@@ -25,7 +35,10 @@ The purpose of this program is to:
 
 > *[Describe in one or two plain-language sentences what the program exists to do and why it matters.]*
 
-The program's value should be understandable without reference to implementation details, technical architecture, or internal mechanisms.
+The program’s value must be understandable without reference to implementation details, technical architecture, or internal mechanisms.
+
+**Measurement Commitment:**
+The success or failure of this purpose must later be expressible through **observable signals and metrics**, not narrative interpretation alone.
 
 ---
 
@@ -33,23 +46,39 @@ The program's value should be understandable without reference to implementation
 
 ### 3.1 Core Problems / Failure Modes
 
-This program exists to address the following observable problems or failure modes:
+This program exists to address the following **observable problems or failure modes**:
 
-* *[Problem 1: described as an observable behavior or systemic failure]*
+* *[Problem 1: stated as something that can be observed, measured, or detected]*
 * *[Problem 2]*
 * *[Optional additional problems]*
 
-Problems must be stated **without embedding solutions** or implied architectures.
+Problems must be stated **without embedding solutions, architectures, or components**.
+
+**Measurement Commitment:**
+Each stated problem must later map to:
+
+* One or more **structural metrics**
+* One or more **runtime or operational signals**
+* A clear failure classification path (what “bad” looks like)
+
+---
 
 ### 3.2 Desired Outcomes / Capabilities
 
 If successful, this program will enable the following outcomes:
 
-* *[Outcome 1: what changes in the world for users or systems]*
+* *[Outcome 1: what measurably changes for users or systems]*
 * *[Outcome 2]*
 * *[Optional additional outcomes]*
 
-Outcomes describe **capabilities and effects**, not features or implementations.
+Outcomes describe **capabilities and effects**, not features.
+
+**Measurement Commitment:**
+Each outcome must later be supported by:
+
+* Outcome-aligned metrics
+* Leading and lagging indicators
+* Clear differentiation between partial success and failure
 
 ---
 
@@ -57,11 +86,18 @@ Outcomes describe **capabilities and effects**, not features or implementations.
 
 The program is intended to achieve the following high-level goals:
 
-* *[Goal 1: outcome-focused, not technical]*
+* *[Goal 1: outcome-focused]*
 * *[Goal 2]*
 * *[Goal 3 (optional)]*
 
-Goals describe **what success looks like**, not how it will be implemented.
+Goals define **what success looks like**.
+
+**Measurement Commitment:**
+Goals must later be evaluable using:
+
+* Aggregated component and non-component metrics
+* Cross-cutting quality and safety signals
+* Longitudinal trend analysis (not one-off measurements)
 
 ---
 
@@ -73,7 +109,14 @@ The program explicitly will **not**:
 * *[Non-goal 2]*
 * *[Non-goal 3 (if applicable)]*
 
-These exclusions are binding and prevent scope creep during later phases.
+These exclusions are binding.
+
+**Measurement Commitment:**
+SCIS metrics must later be able to **detect violations of non-goals**, including:
+
+* Accidental scope expansion
+* Unauthorized capability emergence
+* Structural drift beyond declared intent
 
 ---
 
@@ -81,33 +124,60 @@ These exclusions are binding and prevent scope creep during later phases.
 
 ### 6.1 System Role
 
-At a high level, this system's role is to:
+At a high level, this system’s role is to:
 
 * *[Describe what the system sits between, coordinates, mediates, or enables]*
 
-This defines the system's **position in the larger environment**, not its internal structure.
+This defines the system’s **position in its environment**, not its internals.
+
+**Measurement Commitment:**
+Metrics must later be able to distinguish:
+
+* What the system owns
+* What it influences
+* What it merely observes
+
+---
 
 ### 6.2 System Architecture Pattern
 
 This system follows a **[monolithic / coordination / pipeline / mediation / hybrid]** pattern.
 
 **If coordination/mediation:**
-* **Upstream systems:** *[What systems/sources provide input to this system]*
-* **Downstream systems:** *[What systems/models this system controls or coordinates]*
-* **Mediation strategy:** *[How this system transforms, enriches, or controls the flow between upstream and downstream]*
+
+* **Upstream systems:** *[Abstract sources]*
+* **Downstream systems:** *[Abstract targets]*
+* **Mediation strategy:** *[Abstract transformation/control role]*
 
 **If monolithic:**
-* *[Describe the system's self-contained nature and primary interfaces]*
 
-This declaration constrains how the File Map and Component Map will be structured.
+* *[Describe self-contained nature and interfaces]*
+
+This declaration constrains future maps.
+
+**Measurement Commitment:**
+The chosen pattern must later be supported by:
+
+* Dependency metrics
+* Boundary and isolation metrics
+* Blast-radius and propagation metrics
+
+---
 
 ### 6.3 High-Level Interaction Flow
 
-The system's abstract interaction or control flow can be described as:
+The system’s abstract interaction flow:
 
 > *[Input / Trigger → Transformation / Mediation → Output / Effect]*
 
-This flow must remain **implementation-agnostic** and free of component detail.
+This must remain **implementation-agnostic**.
+
+**Measurement Commitment:**
+Each stage of this flow must later be observable through:
+
+* Entry signals
+* Transition metrics
+* Outcome signals
 
 ---
 
@@ -121,7 +191,10 @@ Secondary or indirect users (if any):
 
 * *[Optional]*
 
-User descriptions should focus on **intent, expectations, and interaction**, not UI or workflows.
+User descriptions focus on **intent and expectations**.
+
+**Measurement Commitment:**
+User-facing behavior must later be measurable without relying on anecdotal reports alone.
 
 ---
 
@@ -129,14 +202,21 @@ User descriptions should focus on **intent, expectations, and interaction**, not
 
 The program operates on the following core domain concepts:
 
-* **[Concept Name]:** *[Brief, implementation-agnostic definition]*
+* **[Concept Name]:** *[Definition]*
 * **[Concept Name]:** *[Definition]*
 
-Where relevant, note relationships:
+Relationships (if any):
 
-* *[Concept A references / composes / depends on Concept B]*
+* *[Concept A relates to Concept B]*
 
-These concepts form the **shared vocabulary** for all subsequent SCIS maps and contracts.
+These concepts form the shared vocabulary.
+
+**Measurement Commitment:**
+Key domain concepts must later have:
+
+* Usage and relevance metrics
+* Evolution tracking (emergence, decay, replacement)
+* Clear mapping to components or non-components
 
 ---
 
@@ -144,59 +224,74 @@ These concepts form the **shared vocabulary** for all subsequent SCIS maps and c
 
 ### 9.1 State
 
-For this program, "state" refers to:
+For this program, “state” refers to:
 
-* *[e.g., session state, world state, configuration, derived knowledge]*
+* *[Types of state]*
 
-Only the **existence and nature** of state may be declared here, not its structure.
+Only existence and nature are declared here.
+
+**Measurement Commitment:**
+State transitions and persistence must later be measurable and auditable.
+
+---
 
 ### 9.2 Context Dependencies
 
-The program depends on the following contextual factors:
+The program depends on:
 
 * *[User context]*
 * *[Environmental context]*
-* *[Upstream or downstream systems (abstract)]*
+* *[External systems]*
+
+**Measurement Commitment:**
+Context sensitivity must later be visible through:
+
+* Input classification metrics
+* Environment skew detection
+* Context-driven behavior variance
+
+---
 
 ### 9.3 Boundaries (In-Scope / Out-of-Scope)
 
 The program:
 
-* **Owns:** *[What it is responsible for]*
-* **Observes:** *[What it reads or reacts to but does not control]*
-* **Ignores:** *[What is explicitly out of scope]*
+* **Owns:** *[Responsibilities]*
+* **Observes:** *[Read-only influences]*
+* **Ignores:** *[Explicitly excluded]*
+
+**Measurement Commitment:**
+Boundary violations must be detectable via metrics.
+
+---
 
 ### 9.4 Representation vs Execution
 
 This system operates on:
 
-* **[Direct execution]** - acts directly on real entities, data, or physical systems
-* **[Symbolic representation]** - acts on models, abstractions, or representations of entities
-* **[Mixed]** - *[describe the boundary between symbolic and direct execution]*
+* **[Direct execution]**
+* **[Symbolic representation]**
+* **[Mixed]**
 
-**If symbolic or mixed:**
-* What remains symbolic: *[e.g., visual layouts, semantic concepts, domain knowledge]*
-* What gets executed/realized: *[e.g., generated text, API calls, concrete outputs]*
-* Why this boundary exists: *[e.g., efficiency, safety, model limitations]*
+If symbolic or mixed:
 
-This declaration is critical for understanding what the system "knows" versus what it "does."
+* What remains symbolic
+* What is executed
+* Why the boundary exists
+
+**Measurement Commitment:**
+Metrics must later distinguish symbolic reasoning from executed effects.
 
 ---
 
 ## 10. Operational Context
 
-At a high level, this program will operate in the following context:
+* **Execution environment:** *[Abstract]*
+* **Interaction model:** *[Human / automated / mixed]*
+* **Persistence:** *[Abstract]*
 
-* **Execution environment:**
-  *[e.g., local application, web application, service, library, embedded, etc.]*
-
-* **Interaction model:**
-  *[e.g., human-driven, automated, mixed]*
-
-* **Persistence:**
-  *[e.g., no persistent state, local persistence, external storage — no schemas]*
-
-These declarations constrain future architectural choices without defining them.
+**Measurement Commitment:**
+Operational behavior must later be measurable without relying on ad-hoc logging.
 
 ---
 
@@ -204,101 +299,126 @@ These declarations constrain future architectural choices without defining them.
 
 ### 11.1 Quality Attributes (Prioritized)
 
-The program prioritizes the following quality attributes:
+* *[Reliability, performance, safety, explainability, etc.]*
 
-* *[e.g., reliability, performance, scalability, safety, explainability, cost]*
+**Measurement Commitment:**
+Each prioritized quality attribute must later map to:
 
-If tradeoffs arise, these priorities guide decisions.
+* Explicit metrics
+* Acceptable ranges
+* Violation signals
+
+---
 
 ### 11.2 Cross-Cutting Constraints
 
-The program is subject to the following non-functional constraints:
+* *[Cost, safety, privacy, opacity, etc.]*
 
-* *[e.g., cost ceilings, safety guarantees, privacy rules, reasoning opacity]*
-
-These constraints apply across all components and phases.
+**Measurement Commitment:**
+Constraint breaches must later be objectively detectable.
 
 ---
 
-## 12. Evolution, Metrics, and Learning
+## 12. Metrics, Signals, and Learning (SCIS-Bound)
 
-### 12.1 Signals & Measurements
+### 12.1 Metric Commitment (Foundational)
 
-The program will be evaluated using the following types of signals:
+This program commits to the following SCIS rules:
 
-* *[Metrics, feedback, usage signals, outcome indicators]*
+* Every future **Component (CA)** will have declared metrics
+* Every future **Non-Component (NCA)** that can be accessed, mutated, or depended on will have declared metrics
+* No runtime behavior may exist without a corresponding measurable signal
+* No silent failures are permitted
 
-Specific dashboards or tools are not defined at this stage.
+Metrics are **structural requirements**, not optional instrumentation.
 
-### 12.2 Allowed Adaptation
+---
 
-Measurements may influence the system through:
+### 12.2 Classes of Signals (Declared, Not Defined)
+
+The program will later emit metrics across these classes:
+
+* **Usage & Access**
+* **Contract & Constraint Compliance**
+* **Determinism & Variance**
+* **Dependency Health**
+* **Safety & Violation Detection**
+* **Evolution & Change Tracking**
+* **User-Visible Outcome Signals**
+
+Exact metrics are intentionally deferred to later phases.
+
+---
+
+### 12.3 Learning & Adaptation Boundaries
+
+Metrics may influence the system through:
 
 * *[Configuration changes]*
 * *[Tuning or learning]*
-* *[Deprecation or refinement of behaviors]*
+* *[Deprecation or refinement]*
 
-Any adaptive behavior must remain within declared constraints.
+All adaptation must remain:
 
-### 12.3 Structural Evolution
-
-Beyond parameter tuning or configuration changes, this system **[may / may not]** evolve its structure over time.
-
-**If structural evolution is allowed:**
-
-The system may evolve through:
-* **[New vocabulary/concepts]** - *[e.g., learning new domain terms, token definitions]*
-* **[New rules/constraints]** - *[e.g., derived semantic rules, safety boundaries]*
-* **[New components/capabilities]** - *[e.g., specialized agents, processing modes]*
-* **[Retired elements]** - *[e.g., deprecated concepts, obsolete rules]*
-
-**Governance mechanism:**
-* *[e.g., automated validation in sandbox, human approval, confidence thresholds]*
-* *[Who/what has authority to propose vs approve structural changes]*
-
-**Scope limits:**
-* *[What kinds of structural changes are forbidden]*
-* *[Safeguards against unbounded growth]*
-
-**If no structural evolution:**
-* *[State why the system's structure is fixed after initial deployment]*
-
-This declaration informs whether the Component Map will include evolution mechanisms.
+* Within declared constraints
+* Measurable
+* Reversible or auditable
 
 ---
 
-## 13. Risks, Safeguards, and Scope Control
+## 13. Evolution, Risks, and Safeguards
 
-### 13.1 Foreseeable Risks
+### 13.1 Structural Evolution
 
-Potential risks or failure patterns include:
+This system **[may / may not]** evolve structurally over time.
+
+If allowed:
+
+* New concepts
+* New rules
+* New components
+* Retired elements
+
+**Governance:**
+*Who proposes, who approves, and how metrics inform decisions.*
+
+---
+
+### 13.2 Foreseeable Risks
 
 * *[Technical risk]*
-* *[UX or operational risk]*
-* *[Safety or misuse risk]*
+* *[Operational risk]*
+* *[Safety risk]*
 
-### 13.2 Safeguards & Scope Limits
+**Measurement Commitment:**
+Each risk must later have:
 
-The following guardrails apply:
+* Early warning signals
+* Impact metrics
+* Containment indicators
 
-* *[Limits on automation, authority, data, or complexity]*
-* *[Rules such as "do not build unless forced"]*
+---
 
-These rules are binding unless explicitly revised.
+### 13.3 Safeguards & Scope Control
+
+* *[Hard limits, authority constraints, safety rules]*
+
+Safeguards must be enforceable and observable.
 
 ---
 
 ## 14. Integration & External Dependencies
 
-The program is expected to integrate with or depend on:
+The program may integrate with:
 
-* *[External systems, APIs, services, or resources — abstractly stated]*
+* *[Abstract external systems]*
 
-Assumptions about these dependencies:
+Assumptions:
 
-* *[Availability, latency, cost, trust level]*
+* *[Availability, trust, latency]*
 
-No integration details or contracts are defined at P0.
+**Measurement Commitment:**
+External dependency behavior must later be visible through declared metrics.
 
 ---
 
@@ -310,25 +430,25 @@ This program will be developed in strict accordance with SCIS rules, including:
 * No implicit structure
 * No implementation before declaration
 * Deterministic, phase-locked progression
+* Mandatory metric coverage for all declared elements
 
-Any deviation must be explicitly documented and justified.
+Any deviation must be explicitly documented, justified, and measured.
 
 ---
 
 ## 16. Next SCIS Step
 
-The next file to be created for this program is:
+The next file to be created is:
 
 > **A1p0s0f1 — Program File Map**
 
-This file will define the **structural layout** of the program only.
-It must be generated using the SCIS **Greenfield Map Rules** and must not introduce components, logic, or implementation details.
+This file will define **structural layout only** and must not introduce components, logic, or metrics.
 
-After the File Map is complete, the following file will be created:
+After that:
 
 > **A1p0s0f2 — Component Map**
 
-This will declare the major functional components, their responsibilities, and their relationships — still without implementation.
+This will declare components and non-components, at which point **metric envelopes become mandatory**.
 
 ---
 
