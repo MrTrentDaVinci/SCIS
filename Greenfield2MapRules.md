@@ -1,7 +1,8 @@
 # LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield2MapRules.md
-# The purpose of this file is to make the file A1p0s0f1.md using the A1p0s0f0.md
 
-## Title: **SCIS Greenfield Map Rules**
+---
+
+# **SCIS Greenfield Map Rules (Metrics-Built-In)**
 
 **Phase:** P0
 **Applies to:** All New (Greenfield) Programs
@@ -16,10 +17,11 @@ This file defines the **only allowed rules** for generating a **Program File Map
 It exists to ensure that:
 
 * File structures are deterministic
-* No logic, components, or implementation details are guessed
+* No logic, components, or implementations are guessed
 * Large or complex programs remain expandable
-* Multiple programs can coexist safely in the same repository
-* LLMs can generate file maps without exceeding context limits
+* Multiple programs can coexist safely
+* LLMs can generate file maps without context overflow
+* **Metric definition is structurally unavoidable**
 
 This file is read **before** any file map is created.
 
@@ -30,32 +32,34 @@ This file is read **before** any file map is created.
 An LLM generating a Program File Map **must have access to**:
 
 1. `A0p0s0f0` — SCIS Global Orientation (Greenfield context)
-2. `A1p0s0f0.md` — *SCIS Greenfield Start* (program-specific intent)
+2. `A1p0s0f0.md` — *SCIS Greenfield Start* (program intent + metric commitments)
 3. This file (`A0p0s0f1.md`)
 
-If any of these are missing, file-map generation must stop.
+If any are missing, generation must stop.
 
 ---
 
 ## 3. Output File Definition
 
-The output of this process is:
-
 **File:** `A#p0s0f1.md`
 **Name:** Program File Map
-**Purpose:**
-Defines *only* the files, phases, and sections that will exist for the program.
+
+Defines **only**:
+
+* Files
+* Phases
+* Sections
+* Structural intent
 
 It must **not** define:
 
 * Components
 * Non-components
 * Logic
-* APIs
-* Databases
-* UI details
 * Algorithms
-* Dependencies
+* Data flow
+* Metric formulas or thresholds
+* Tooling
 
 ---
 
@@ -63,15 +67,22 @@ It must **not** define:
 
 ### 4.1 Structure Before Meaning
 
-The file map declares **where things will live**, not **what they do internally**.
+The file map declares **what must exist**, not **how it behaves**.
+
+Metrics are treated as **structural obligations**, not runtime artifacts.
+
+---
 
 ### 4.2 Expandability Is Mandatory
 
 File maps must:
 
-* Assume future features
-* Allow new phases, sections, or programs
-* Avoid tight coupling or premature specialization
+* Assume future growth
+* Reserve space for evolution
+* Avoid premature specialization
+* Include **metrics expansion capacity**
+
+---
 
 ### 4.3 Phase Discipline
 
@@ -81,152 +92,238 @@ At greenfield time:
 
 * P0 is mandatory
 * P1–P3 are common
-* P4–P7 are optional placeholders
-* P99 must be reserved if long-lived
+* P4–P7 are reserved
+* P99 must be reserved for long-lived systems
 
 ---
 
 ## 5. Program Scope Rules
 
-When generating a file map, the LLM must decide **only one thing**:
+When generating a file map, the LLM must decide only:
 
-> Is this program likely to grow beyond a small, single-purpose tool?
+> **Is this program likely to grow beyond a small, single-purpose tool?**
 
-If **yes**, the file map must:
+If **yes**, the map must:
 
-* Include multiple sections
-* Reserve space for UI, APIs, DBs, or tools even if unused
-* Prefer generic section purposes
+* Include multiple code sections
+* Reserve UI / API / DB / tools space
+* Include **metrics and observability sections**
 
-If **no**, the file map may be minimal but **must still follow SCIS numbering rules**.
+If **no**, the map may be minimal but **must still reserve metric files**.
 
 ---
 
-## 6. Mandatory Files in Every Program File Map
+## 6. Mandatory Files in Every Program File Map (Updated)
 
-Every `A#p0s0f1.md` **must include**:
+Every `A#p0s0f1.md` **must include** the following structural zones:
 
-### P0 — Program Definition
+---
 
-* Entry summaries
-* File map itself
-* Program-specific rules
-* High-level indexes
+### P0 — Program Definition & Governance
 
-### P1 — Declarations
+* Greenfield Start
+* Program File Map
+* Program-level rules
+* Indexes and summaries
 
-* Component maps (placeholders)
-* Non-component maps (placeholders)
-* NCCF files (empty or templated)
-* Dependency maps
+---
+
+### P1 — Declarations & Contracts
+
+* Component Maps (placeholders)
+* Non-Component Maps (placeholders)
+* NCCF files (templated)
+* Dependency Maps
+* **Metric Obligation Index (NEW)**
+
+---
 
 ### P2–P4 — Implementation Zones (Reserved)
 
-* Code sections
+* Code sections (components & NCAs)
 * Supporting utilities
 * Optional UI / API / services
 
-### P5 — Testing (Reserved)
+---
+
+### P5 — Testing & Validation (Reserved)
 
 * Tests
-* Validation
-* Test results
-
-### P6 — Debug & Logs (Reserved)
-
-### P7 — Artifacts / Assets (Optional)
+* Validation artifacts
+* Test metrics
 
 ---
 
-## 7. Section Usage Rules
+### P6 — Debug, Logs & Operational Signals (Reserved)
 
-Sections (`s0–s9`) must follow these semantics:
+* Runtime logs
+* Debug traces
+* **Metric emissions (runtime-facing, not definitions)**
 
-| Section | Meaning                            |
-| ------- | ---------------------------------- |
-| s0      | Maps, indexes, summaries           |
-| s1      | Registries, schemas, MEMs          |
-| s2–s4   | Code (components & non-components) |
-| s5      | Tests                              |
-| s6      | Debug / logs                       |
-| s7–s9   | Assets, builds, optional resources |
+---
+
+### P7 — Artifacts, Assets & Reports (Optional)
+
+* Builds
+* Assets
+* **Metric reports / summaries (derived, not authoritative)**
+
+---
+
+### P99 — Evolution & History (Mandatory if Long-Lived)
+
+* Change history
+* Metric evolution records
+* Structural deprecations
+
+---
+
+## 7. Metrics Structural Rules (NEW — Critical)
+
+Metrics are **first-class structural citizens**.
+
+The Program File Map **must reserve files for**:
+
+1. **Metric Obligation Index**
+
+   * Maps CA/NCA IDs → required metric categories
+
+2. **Metric Definition Files**
+
+   * Concrete metric definitions (later phases)
+   * One-to-many mapping from obligations
+
+3. **Metric Evolution History**
+
+   * Append-only changes to metric meaning
+
+⚠️ These files:
+
+* Exist structurally at P0
+* Contain no definitions at P0
+* Cannot be removed in later phases
+
+---
+
+## 8. Section Usage Rules (Updated)
+
+Sections (`s0–s9`) must follow:
+
+| Section | Meaning                               |
+| ------- | ------------------------------------- |
+| s0      | Maps, indexes, summaries              |
+| s1      | Registries, schemas, **metrics**, MEM |
+| s2–s4   | Code (components & NCAs)              |
+| s5      | Tests                                 |
+| s6      | Debug, logs, runtime signals          |
+| s7–s9   | Assets, builds, reports               |
+
+Metrics **definitions live in s1**.
+Metric **emissions live in s6**.
+Metric **summaries live in s7–s9**.
 
 No section may be repurposed.
 
 ---
 
-## 8. File Naming Rules
+## 9. File Naming Rules
 
-* All files **must** follow:
-  `A#p#s#f#.<ext>`
-* No descriptive filenames
-* Meaning is conveyed **only** via:
+All files must follow:
 
-  * File map
-  * Headers
-  * Maps
+```
+A#p#s#f#.<ext>
+```
 
-File numbering (`f#`) should:
+No descriptive filenames.
+Meaning is conveyed only through:
 
-* Leave gaps
-* Allow insertion
-* Avoid renumbering later
+* File map
+* Headers
+* Maps
+
+Metric files follow the same rules.
 
 ---
 
-## 9. Logic Exclusion Rule
+## 10. Logic Exclusion Rule
 
-The file map **must not**:
+The file map must **not**:
 
-* Describe logic flows
+* Describe logic
 * Name algorithms
-* Reference operators or data transformations
+* Define thresholds
+* Specify calculations
 
-Logic will be handled later by:
-
-* NCCF files
-* Optional Logic Determinalization files
-* Component-level design
+Metrics are declared as **existence requirements only**.
 
 ---
 
-## 10. Multi-Program Safety Rule
+## 11. Multi-Program Safety Rule
 
-If more than one program may exist in the repository:
+If multiple programs exist:
 
-* Each program **must** have its own `A#` namespace
-* Shared resources belong in `A0`
-* Program file maps must not reference other programs directly
+* Each program has its own A# namespace
+* Shared metrics schemas belong in A0
+* Program maps never reference other programs
 
-Inter-program relationships are handled later via dependency maps.
+Cross-program observability is handled later via dependency maps.
 
 ---
 
-## 11. Human + LLM Readability Requirement
+## 12. Human + LLM Readability Requirement
 
 The file map must:
 
-* Be readable by a human unfamiliar with SCIS
-* Be parsable by an LLM without additional explanation
-* Contain one-sentence descriptions per file
-
-No prose essays. No speculation.
+* Be readable by humans
+* Be parsable by LLMs
+* Use one-line file descriptions
+* Avoid prose explanations
 
 ---
 
-## 12. Validation Checklist (Must Pass)
+## 13. Validation Checklist (Expanded)
 
 Before accepting a file map, verify:
 
 * [ ] All phases are valid
-* [ ] No components are defined
-* [ ] No logic is implied
-* [ ] Expandability is preserved
-* [ ] SCIS naming rules are followed
-* [ ] A0 vs A# boundaries are respected
+* [ ] No components or logic defined
+* [ ] Expandability preserved
+* [ ] SCIS naming rules followed
+* [ ] A0 vs A# boundaries respected
+* [ ] Metric definition files structurally present
+* [ ] Metric evolution space reserved
+* [ ] No metric formulas or tooling defined
 
-If any check fails, the file map must be regenerated.
+Failure → regenerate file map.
 
 ---
 
 ## End of File
+
+---
+
+## Why This Is the Right Move (Short, Important)
+
+By doing this:
+
+* Metrics become **inevitable**, not optional
+* You avoid “observability as a later project”
+* Support, NCCF, and runtime all snap to the same structure
+* You eliminate an entire class of forgotten work
+* SCIS stays **structural, not procedural**
+
+You didn’t add complexity — you **removed a failure mode**.
+
+---
+
+### If you want next
+
+I can:
+
+* Update a **sample `A1p0s0f1.md` output** showing metric files included
+* Align **A0 global metric schemas** to this structure
+* Create a **validator rule-set** to enforce metric presence
+* Stress-test this against a real SaaS or multi-tenant system
+
+Just tell me where to push next.
+
