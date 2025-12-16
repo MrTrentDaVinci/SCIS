@@ -1,5 +1,7 @@
 # LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield3ComponentMapMaker.md
-# **Greenfield Component Map Maker**
+---
+
+# **Greenfield Component Map Maker (With Metrics)**
 
 **SCIS v4.x — Program-Local Generation Contract**
 
@@ -7,14 +9,15 @@
 
 ## 1. Purpose
 
-This document defines the **only authorized process** for generating **Component Maps** and **Non-Component Maps** for a new (greenfield) SCIS program.
+This document defines the **only authorized process** for generating **Component Maps (CA)** and **Non-Component Maps (NCA)** for a new (greenfield) SCIS program.
 
 It ensures that:
 
-* Components are identified *before* logic or code
-* Program structure is deterministic and portable
-* Large systems remain composable and evolvable
-* LLMs do not infer or hallucinate structure
+* Components and non-components are identified *before* logic or code
+* Program structure is deterministic, portable, and evolvable
+* **Every declared element is measurable by default**
+* Large systems remain observable and supportable at scale
+* LLMs do not infer, hallucinate, or create unmeasured structure
 
 ---
 
@@ -26,12 +29,16 @@ This file applies to:
 * Phase P0 only
 * Pre-implementation planning
 
-It does **not**:
+It explicitly **does not**:
 
 * Define logic
 * Define dependencies
 * Define algorithms
+* Define inputs or outputs
 * Define file contents
+* Define metric implementations, thresholds, or tooling
+
+Metrics are **declared as obligations only**.
 
 ---
 
@@ -40,7 +47,7 @@ It does **not**:
 The LLM may read **only** the following files:
 
 1. **`A1p0s0f0.md`**
-   *Greenfield Start — Program intent, goals, constraints, users*
+   *Greenfield Start — intent, goals, constraints, users, metric commitments*
 
 2. **`A1p0s0f1.md`**
    *Program File Map — phases, sections, code-bearing locations*
@@ -56,6 +63,7 @@ The LLM may read **only** the following files:
 * Any dependency maps
 * Any future-phase files
 * Any code
+* Any existing metric catalogs
 
 ---
 
@@ -66,14 +74,12 @@ For **each section that contains code**, generate:
 ### Mandatory
 
 * **One Section Component Map**
-
-  * `A1p0s#f#.toon`
+  `A1p0s#f#.toon`
 
 ### Optional (only if needed)
 
 * **One Section Non-Component Map**
-
-  * `A1p0s#f#.toon`
+  `A1p0s#f#.toon`
 
 No maps are generated for non-code sections.
 
@@ -90,18 +96,19 @@ No maps are generated for non-code sections.
 4. Do not combine sections
 5. Do not split a section across maps
 
-Each section is autonomous.
+Each section is autonomous and independently observable.
 
 ---
 
 ## 6. Definition of a Component (Greenfield)
 
-A **component** is a *stable unit of responsibility* that:
+A **component (CA)** is a *stable unit of responsibility* that:
 
 * Has a long lifetime
 * Represents a conceptual role
 * Will likely evolve internally
-* May own logic later
+* May own logic in later phases
+* **Will emit metrics once implemented**
 
 ### Valid Components
 
@@ -111,7 +118,7 @@ A **component** is a *stable unit of responsibility* that:
 * Engines
 * Handlers
 * UI modules
-* API endpoints (as units)
+* API endpoints (as conceptual units)
 
 ### Invalid Components
 
@@ -127,9 +134,9 @@ A **component** is a *stable unit of responsibility* that:
 
 ---
 
-## 7. Component Entry Requirements
+## 7. Component Entry Requirements (Extended for Metrics)
 
-Each component entry must include:
+Each **component entry** must include:
 
 * **Component ID**
   `CA1p0s#f#.#` (stable, permanent)
@@ -146,20 +153,36 @@ Each component entry must include:
 * **Owning Section**
   `s#`
 
-### Explicitly Forbidden in Component Maps
+* **Metric Obligation Declaration (Mandatory)**
+  A short declaration stating that this component will later emit metrics in the following **classes** (not definitions):
 
-* Dependencies
-* Inputs/outputs
-* Logic
-* Algorithms
-* Data flow
-* Error handling
+  * Usage & access
+  * Contract / constraint compliance
+  * Determinism & variance
+  * Dependency health
+  * Safety & violation signals
+  * Evolution & change tracking
+
+⚠️ **Do not define metric names, formulas, thresholds, or tools.**
 
 ---
 
-## 8. Non-Component Rules
+### Explicitly Forbidden in Component Maps
 
-Non-Components include:
+* Dependencies
+* Inputs or outputs
+* Logic or behavior
+* Algorithms
+* Data flow
+* Error handling
+* Metric implementations
+* Metric thresholds or SLAs
+
+---
+
+## 8. Non-Component Rules (With Metrics)
+
+Non-Components (NCA) include:
 
 * Constants
 * Types
@@ -168,6 +191,7 @@ Non-Components include:
 * Templates
 * Config
 * Static data
+* Assets
 
 They:
 
@@ -175,8 +199,27 @@ They:
 * Are section-scoped
 * Do not get NCCFs
 * Are not executable units
+* **Must still be measurable**
 
-If unsure → **Non-Component**
+---
+
+### Non-Component Entry Requirements
+
+Each **non-component entry** must include:
+
+* **Non-Component ID**
+* **Title**
+* **Role / Nature** (what kind of thing it is)
+* **Owning Section**
+* **Metric Obligation Declaration**, covering (as applicable):
+
+  * Access frequency
+  * Read/write or mutation signals
+  * Dependency role
+  * Staleness or unused detection
+  * Promotion signals (NCA behaving like CA)
+
+If unsure → **Non-Component with metrics**
 
 ---
 
@@ -187,7 +230,8 @@ If unsure → **Non-Component**
 * Never pre-optimize
 * Never mirror files or folders
 
-> SCIS components are conceptual, not structural.
+> SCIS components are conceptual, not structural —
+> metrics exist to reveal when conceptual boundaries need revision.
 
 ---
 
@@ -196,26 +240,46 @@ If unsure → **Non-Component**
 * IDs are immutable
 * IDs are never reused
 * Gaps are allowed
-* Deleted components keep their IDs reserved
+* Deleted components and non-components retain their IDs permanently
 
-IDs exist for traceability, not aesthetics.
+IDs exist for **traceability, metrics correlation, and supportability**, not aesthetics.
 
 ---
 
-## 11. Validation Checklist
+## 11. Metrics Discipline Rules (P0-Safe)
 
-Before accepting a Component Map, verify:
+At P0:
+
+* Metrics are **declared as obligations only**
+* No metric collection is defined
+* No dashboards are implied
+* No operational assumptions are allowed
+
+However:
+
+> **No CA or NCA may exist without a declared metric obligation.**
+
+Metric gaps are SCIS violations.
+
+---
+
+## 12. Validation Checklist (Extended)
+
+Before accepting a Component / Non-Component Map, verify:
 
 * [ ] Every code section has exactly one Component Map
-* [ ] No logic or behavior described
-* [ ] No dependencies listed
+* [ ] No logic or behavior is described
+* [ ] No dependencies are listed
 * [ ] All components have stable IDs
+* [ ] All non-components have stable IDs
 * [ ] All entries are section-scoped
-* [ ] Non-Components separated where appropriate
+* [ ] Every CA includes a metric obligation declaration
+* [ ] Every NCA includes a metric obligation declaration
+* [ ] No metric implementations or thresholds appear
 
 ---
 
-## 12. What Comes Next
+## 13. What Comes Next
 
 Once **all Section Component Maps** are complete:
 
@@ -228,21 +292,30 @@ That is the **first moment** when:
 * Dependencies
 * Constraints
 * MCP integrations
+* **Concrete metric definitions**
 
 are allowed to appear.
 
 ---
 
-## 13. Design Rationale (For Humans & LLMs)
+## 14. Design Rationale (For Humans & LLMs)
 
 This separation ensures:
 
 * Deterministic planning
-* Safer LLM execution
-* Easier upgrades
-* Controlled evolution
-* Massive context reduction
+* No hallucinated observability
+* Built-in supportability
+* Safe LLM operation
+* Metrics-first evolution
+* Zero blind spots at scale
 
-SCIS builds **structure first**, **logic later**, **code last**.
+SCIS builds:
+
+> **Structure first →
+> Measurement obligations second →
+> Logic third →
+> Code last**
+
+---
 
 
