@@ -1,19 +1,25 @@
 # LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield4NCCFMaker.json
+
 {
   "file_name": "Greenfield NCCF Maker",
-  "description": "Instructions to generate A1p0s0f7.toon, the NCCF Template containing program-wide component contracts",
+  "description": "Instructions to generate A1p0s0f7.toon, the NCCF Template containing program-wide component contracts with mandatory metric declarations",
   "phase": "A1p0",
   "section": "s0",
+
   "required_inputs": [
-    "A1p0s0f0.md", 
-    "A1p0s0f1.md"
+    "A1p0s0f0.md",
+    "A1p0s0f1.md",
+    "A1p0s0f4.toon",
+    "A1p0s0f5.toon"
   ],
+
   "template": {
     "header": {
       "ID_format": "A1p0s0f7-<ComponentID>",
       "phase": "A1p0",
       "section": "s0"
     },
+
     "fields": [
       "Component Name",
       "Purpose",
@@ -21,38 +27,81 @@
       "Outputs",
       "Constraints",
       "Dependencies",
-      "MCP Integrations"
+      "MCP Integrations",
+      "Metric Obligations"
     ],
+
     "structure": [
       {
         "component": "<Name of component>",
         "purpose": "<Brief purpose description>",
-        "inputs": ["<List of inputs>"],
-        "outputs": ["<List of outputs>"],
-        "constraints": ["<Any constraints>"],
-        "dependencies": ["<Other components or external dependencies>"],
-        "mcp_integrations": ["<External MCP / API endpoints integrated>"]
+
+        "inputs": [
+          "<Declared input identifiers (no logic, no validation rules)>"
+        ],
+
+        "outputs": [
+          "<Declared output identifiers>"
+        ],
+
+        "constraints": [
+          "<Behavioral, safety, performance, or scope constraints>"
+        ],
+
+        "dependencies": [
+          "<Other SCIS Component IDs or declared external systems>"
+        ],
+
+        "mcp_integrations": [
+          "<External MCP / API endpoints integrated, if any>"
+        ],
+
+        "metric_obligations": {
+          "required": true,
+          "categories": [
+            "usage_and_access",
+            "input_output_compliance",
+            "constraint_violation",
+            "determinism_and_variance",
+            "dependency_health",
+            "safety_and_policy_violations",
+            "evolution_and_change_tracking"
+          ],
+          "notes": "Metrics are declared as contractual obligations only. No metric names, formulas, thresholds, dashboards, or tooling are defined at this phase."
+        }
       }
     ]
   },
+
   "rules": [
-    "Follow SCIS phase-lock rules",
-    "Use deterministic naming for Component IDs",
-    "Ensure each component listed has a corresponding entry in the Component Map (A1p0s0f4.toon)",
-    "Validate inputs and outputs match existing components and non-components",
-    "Include MCP integrations if the component interacts with external endpoints",
-    "Avoid duplicate entries; each component appears once"
+    "Follow SCIS phase-lock rules strictly",
+    "Use deterministic, immutable Component IDs",
+    "Each NCCF entry MUST correspond to an existing Component ID in the Component Map (A1p0s0f4.toon)",
+    "No NCCF may exist for Non-Components",
+    "Inputs and outputs must reference declared Components or Non-Components only",
+    "Constraints must be declarative, not algorithmic",
+    "Dependencies must be normalized and ID-referenced",
+    "MCP integrations must be explicitly declared if external interaction occurs",
+    "Every NCCF entry MUST include a Metric Obligations block",
+    "Metric obligations may declare categories only; implementations are forbidden at P0",
+    "No silent behavior: every constraint must be paired with a measurable violation signal in later phases"
   ],
+
   "file_dependencies": [
     "A1p0s0f0.md",
     "A1p0s0f1.md",
     "A1p0s0f4.toon",
     "A1p0s0f5.toon"
   ],
-  "generation_order_hint": "Generate Component Map (f4) and Non-Component Map (f5) before NCCF (f7)",
+
+  "generation_order_hint": "Generate Component Map (f4) and Non-Component Map (f5) before NCCF (f7). Metric obligations declared in Component Maps must be reflected and expanded here.",
+
   "notes": [
-    "This TOON file is only for new programs (Greenfield projects)",
-    "If multiple programs exist in the folder, generate separate NCCF entries per program",
-    "Ensure constraints and dependencies are normalized according to SCIS NCCF rules"
+    "This NCCF file is authoritative for component behavior and measurement obligations",
+    "Metric obligations bind runtime, support, and evolution requirements",
+    "Concrete metric definitions, thresholds, and tooling are deferred to later phases",
+    "If a component cannot meaningfully emit metrics in a required category, an explicit exemption must be declared and justified in a later phase",
+    "Unmeasured behavior is considered a contract violation under SCIS"
   ]
 }
+
