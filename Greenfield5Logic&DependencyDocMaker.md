@@ -2,7 +2,7 @@
 # TOON File: `Greenfield Logic & Dependency Doc Maker`
 
 **Purpose:**
-Generate the following SCIS Phase 0 & Phase 1 files for a new Greenfield project:
+Generate the following SCIS Stage 0 & Stage 1 files for a new Greenfield project:
 
 1. **Logic Map Explainer (`A1p0s0f8.md`)**
 2. **Logic Determinization Map (`A1p0s0f9.toon`)**
@@ -85,7 +85,7 @@ Generate the following SCIS Phase 0 & Phase 1 files for a new Greenfield project
 
 ## **Usage Notes**
 
-* Only **Phase 0 files (f0, f1, f4, f5)** are required to generate all outputs.
+* Only **Stage 0 files (f0, f1, f4, f5)** are required to generate all outputs.
 * Can be re-run after updates to components, non-components, or program structure.
 * Supports deterministic AI generation and safe modification in future iterations.
 * Optional: Include legacy mapping if remaking an old program for cross-reference.
