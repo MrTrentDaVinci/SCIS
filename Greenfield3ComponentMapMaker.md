@@ -26,7 +26,7 @@ It ensures that:
 This file applies to:
 
 * New programs only (A1+)
-* Phase P0 only
+* Stage S0 only
 * Pre-implementation planning
 
 It explicitly **does not**:
@@ -74,12 +74,12 @@ For **each section that contains code**, generate:
 ### Mandatory
 
 * **One Section Component Map**
-  `A1p0s#f#.toon`
+  `A1p#s#f#.toon`
 
 ### Optional (only if needed)
 
 * **One Section Non-Component Map**
-  `A1p0s#f#.toon`
+  `A1p#s#f#.toon`
 
 No maps are generated for non-code sections.
 
@@ -139,7 +139,7 @@ A **component (CA)** is a *stable unit of responsibility* that:
 Each **component entry** must include:
 
 * **Component ID**
-  `CA1p0s#f#.#` (stable, permanent)
+  `CA1p#s#f#.#` (stable, permanent)
 
 * **Title**
   Human-readable name
@@ -147,8 +147,8 @@ Each **component entry** must include:
 * **Purpose**
   One sentence, *no logic*
 
-* **Phase Declared**
-  Always `P0`
+* **Stage Declared**
+  Always `S0`
 
 * **Owning Section**
   `s#`
@@ -195,7 +195,7 @@ Non-Components (NCA) include:
 
 They:
 
-* Receive IDs (`NCA1p0s#f#.#`)
+* Receive IDs (`NCA1p#s#f#.#`)
 * Are section-scoped
 * Do not get NCCFs
 * Are not executable units
@@ -246,7 +246,7 @@ IDs exist for **traceability, metrics correlation, and supportability**, not aes
 
 ---
 
-## 11. Metrics Discipline Rules (P0-Safe)
+## 11. Metrics Discipline Rules (S0-Safe)
 
 At P0:
 
