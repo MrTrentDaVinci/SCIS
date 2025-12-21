@@ -15,7 +15,15 @@ Filename Rules (Mandatory):
 - No new filenames may be invented.
 - No renaming or reindexing is permitted.
 ---
+## Terminology Override
 
+This document uses:
+- **Stage** to refer to the SCIS lifecycle step.
+- **p#** only as a filename index.
+
+Any occurrence of the word "phase" in older contexts MUST be interpreted as "stage" unless explicitly referring to filename structure.
+
+---
 ## 1. Purpose of This File
 
 This file defines the **only allowed rules** for generating a **Program File Map** (`A#p0s0f1`) for a new SCIS program.
@@ -92,14 +100,14 @@ File maps must:
 
 ### 4.3 Phase Discipline
 
-Only **P0–P7 and P99** may be referenced.
+Only **p0–p7 and p99** may be referenced.
 
 At greenfield time:
 
-* P0 is mandatory
-* P1–P3 are common
-* P4–P7 are reserved
-* P99 must be reserved for long-lived systems
+* p0 is mandatory
+* p1–p3 are common
+* p4–p7 are reserved
+* p99 must be reserved for long-lived systems
 
 ---
 
@@ -124,8 +132,7 @@ If **no**, the map may be minimal but **must still reserve metric files**.
 Every `A#p0s0f1.md` **must include** the following structural zones:
 
 ---
-
-### P0 — Program Definition & Governance
+### S0 — Program Definition & Governance
 
 * Greenfield Start
 * Program File Map
@@ -134,7 +141,7 @@ Every `A#p0s0f1.md` **must include** the following structural zones:
 
 ---
 
-### P1 — Declarations & Contracts
+### S1 — Declarations & Contracts
 
 * Component Maps (placeholders)
 * Non-Component Maps (placeholders)
@@ -144,7 +151,7 @@ Every `A#p0s0f1.md` **must include** the following structural zones:
 
 ---
 
-### P2–P4 — Implementation Zones (Reserved)
+### S2–S4 — Implementation Zones (Reserved)
 
 * Code sections (components & NCAs)
 * Supporting utilities
@@ -152,7 +159,7 @@ Every `A#p0s0f1.md` **must include** the following structural zones:
 
 ---
 
-### P5 — Testing & Validation (Reserved)
+### S5 — Testing & Validation (Reserved)
 
 * Tests
 * Validation artifacts
@@ -160,7 +167,7 @@ Every `A#p0s0f1.md` **must include** the following structural zones:
 
 ---
 
-### P6 — Debug, Logs & Operational Signals (Reserved)
+### S6 — Debug, Logs & Operational Signals (Reserved)
 
 * Runtime logs
 * Debug traces
