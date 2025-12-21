@@ -11,7 +11,14 @@
 **Status:** Authoritative Entry Point
 
 ---
+## Terminology Override
 
+This document uses:
+- **Stage** to refer to the SCIS lifecycle step.
+- **p#** only as a filename index.
+
+Any occurrence of the word "phase" in older contexts MUST be interpreted as "stage" unless explicitly referring to filename structure.
+---
 ## 1. Program Overview
 
 This file marks the formal start of a new program developed using the SCIS framework.
@@ -118,6 +125,12 @@ SCIS metrics must later be able to **detect violations of non-goals**, including
 * Unauthorized capability emergence
 * Structural drift beyond declared intent
 
+---
+TERMINOLOGY LOCK:
+- "Stage" refers to the SCIS lifecycle step (Stage 0, Stage 1, etc.).
+- "p#" refers exclusively to the repository phase index in filenames.
+- Stages may span multiple p# values.
+- Filenames must NEVER encode stage numbers.
 ---
 
 ## 6. System Role & Interaction Flow
