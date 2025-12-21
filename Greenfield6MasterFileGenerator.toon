@@ -2,7 +2,7 @@
 # TOON File: `Greenfield Master File Generator`
 
 **Purpose:**
-Generate **all remaining A1+ SCIS files** for a new Greenfield project using minimal input: the initial Phase 0 files (`f0` and `f1`) plus component/non-component registries and any prior Phase 1/logic outputs.
+Generate **all remaining A1+ SCIS files** for a new Greenfield project using minimal input: the initial Stage 0 files (`f0` and `f1`) plus component/non-component registries and any prior Phase 1/logic outputs.
 
 ---
 
@@ -21,7 +21,7 @@ Generate **all remaining A1+ SCIS files** for a new Greenfield project using min
 
 This TOON file can generate any of the following:
 
-### **Phase 0 – Entry, Maps, NCCF, Logic**
+### **Stage 0 – Entry, Maps, NCCF, Logic**
 
 * `A1p0s0f8.md` – Logic Map Explainer
 * `A1p0s0f9.toon` – Logic Determinization Map
@@ -31,14 +31,14 @@ This TOON file can generate any of the following:
 * `A1p0s0f12.md` – Phase-Lock Rules
 * `A1p0s0f13.md` – Deterministic Generation Rules
 
-### **Phase 1 – Dependencies & Legacy Analysis**
+### **Stage 1 – Dependencies & Legacy Analysis**
 
 * `A1p1s1f0.toon` – Program Internal Dependency Map
 * `A1p1s1f1.toon` – Section-to-Section Dependency Map
 * `A1p1s1f2.toon` – Legacy Mapping
 * `A1p1s1f3.toon` – Cross-Program Dependencies
 
-### **Phase 2 – Core Components / Backend**
+### **Stage 2 – Core Components / Backend**
 
 * `A1p2s2f0.md` – Section Summary / Purpose
 * `A1p2s2f1.toon` – Component Registry
@@ -46,7 +46,7 @@ This TOON file can generate any of the following:
 * `A1p2s2f3.py` – Core Backend Scripts / Services
 * `A1p2s2f4.json` – Component-Specific NCCF Instances
 
-### **Phase 3 – UI / API / MCP**
+### **Stage 3 – UI / API / MCP**
 
 * `A1p3s3f0.md` – Section Summary / Purpose
 * `A1p3s3f1.toon` – Component Registry (UI/Frontend)
@@ -55,7 +55,7 @@ This TOON file can generate any of the following:
 * `A1p3s3f4.json` – NCCF Instances for UI/API Components
 * `A1p3s3f5.md` – API & MCP Integration Notes
 
-### **Phase 4 – Testing & Debugging**
+### **Stage 4 – Testing & Debugging**
 
 * `A1p4s6f0.md` – Testing Plan / Test Cases
 * `A1p4s6f1.py` – Test Runner / Safe Execution Wrapper
@@ -63,7 +63,7 @@ This TOON file can generate any of the following:
 * `A1p4s6f3.py` – Debug Tools / Error Mapping / Fix Loops
 * `A1p4s6f4.md` – Debugging Guidelines / Phase Completion Notes
 
-### **Phase 5+ – Extensions / Optional Modules**
+### **Stage 5+ – Extensions / Optional Modules**
 
 * `A1p5s7f0.md` – Optional Feature Documentation
 * `A1p5s7f1.toon` – Component Registry for Extensions
@@ -95,7 +95,7 @@ This TOON file can generate any of the following:
 
 3. **Generate Files in Order:**
 
-   * Phase 0 → Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Documentation/Glossary
+   * Stage 0 → Stage 1 → Stage 2 → Stage 3 → Stage 4 → Stage 5 → Documentation/Glossary
    * Ensure all cross-references (IDs, sections, dependencies) are consistent.
 
 4. **Validation:**
