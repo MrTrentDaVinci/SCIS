@@ -9,6 +9,12 @@
 **Status:** Authoritative Generation Rules
 
 ---
+Filename Rules (Mandatory):
+- All generated files MUST follow the exact format A#p#s#f#.<ext>
+- Filenames are taken ONLY from the Flat File Map (A1p0s0f1.md).
+- No new filenames may be invented.
+- No renaming or reindexing is permitted.
+---
 
 ## 1. Purpose of This File
 
