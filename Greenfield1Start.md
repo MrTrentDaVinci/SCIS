@@ -2,13 +2,17 @@
 
 ---
 
-# File: A1p0s0f0.md file maker
+# Greenfield1Start.md - Greenfield Program Start Template
 
-## Title: **SCIS Greenfield Start**
+**Purpose**: Serves as the authoritative support template for initiating any new greenfield SCIS program. LLMs must copy and adapt this file as the basis for creating a program's A#p0s0f0.md (Program Summary). It enforces intent, constraints, outcomes, and measurement commitments before any maps or code exist.
 
-**Phase:** P0
-**Scope:** New Program (Greenfield)
-**Status:** Authoritative Entry Point
+---
+
+# SCIS Greenfield Start Template
+
+## Title: **SCIS Greenfield Program Declaration**
+
+**Status:** Authoritative Entry Point for New Greenfield Program
 
 ---
 ## Terminology Override
@@ -466,3 +470,7 @@ This will declare components and non-components, at which point **metric envelop
 ---
 
 ## End of File
+
+---
+
+
