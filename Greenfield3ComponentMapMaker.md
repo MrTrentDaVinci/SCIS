@@ -54,7 +54,7 @@ The LLM may read **only** the following files:
 1. **`A#p0s0f0.md`**
    *Greenfield Start — intent, goals, constraints, users, metric commitments*
 
-2. **`A#p0s0f10.md`**
+2. **`A#p0s0f1.md`**
    *Program File Map — phases, sections, code-bearing locations*
 
 3. **This file**
