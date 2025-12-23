@@ -37,18 +37,18 @@ This file map is the **authoritative declaration** of all files that will exist 
 
 ## File Map Template (Copy to A#p0s0f10.md)
 
-| File Name              | Purpose                                      | Stage/Phase | Required? |
-|-----------------------|----------------------------------------------|-------------|-----------|
-| A#p0s0f0.md          | Program Summary & Intent                     | Stage 0     | Yes      |
-| A#p0s0f10.md         | File Map (this file)                         | Stage 0     | Yes      |
-| A#p0s0f20.md         | Sub-Maps / Section Breakdown                 | Stage 0     | Yes      |
-| A#p0s0f30.md         | Component Registry                           | Stage 0     | Yes      |
-| A#p0s0f40.md         | NCCF (Non-Code Contract Framework)           | Stage 0     | Yes      |
-| A#p0s0f50.md         | Logic Map                                    | Stage 0     | Yes      |
-| A#p0s0f60.md         | Dependency Map                               | Stage 0     | Yes      |
-| A#p0s0f70.md         | Metrics Map                                  | Stage 0     | Yes      |
-| A#p2s0f0.py          | Core Implementation Code                     | Stage 2     | Yes      |
-| ...                  | ...                                          | ...         | ...      |
+| File Name           | Purpose                                      | Stage/Phase | Required? |
+|---------------------|----------------------------------------------|-------------|-----------|
+| A#p0s0f0.md         | Program Summary & Intent                     | Stage 0     | Yes      |
+| A#p0s0f1.md         | File Map (this file)                         | Stage 0     | Yes      |
+| A#p0s0f2.md         | Sub-Maps / Section Breakdown                 | Stage 0     | Yes      |
+| A#p0s0f3.md         | Component Registry                           | Stage 0     | Yes      |
+| A#p0s0f4.md         | NCCF (Non-Code Contract Framework)           | Stage 0     | Yes      |
+| A#p0s0f5.md         | Logic Map                                    | Stage 0     | Yes      |
+| A#p0s0f6.md         | Dependency Map                               | Stage 0     | Yes      |
+| A#p0s0f7.md         | Metrics Map                                  | Stage 0     | Yes      |
+| A#p2s0f0.py         | Core Implementation Code                     | Stage 2     | Yes      |
+| ...                 | ...                                          | ...         | ...      |
 
 **Notes on Table:**
 - Replace `#` with actual program ID
