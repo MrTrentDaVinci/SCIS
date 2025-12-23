@@ -1,5 +1,10 @@
 # LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield3ComponentMapMaker.md
 ---
+# Greenfield3ComponentMapMaker.md - Greenfield Component & Non-Component Map Template & Rules
+
+**Purpose**: Serves as the authoritative support template and rule contract for generating Component Maps (CA) and Non-Component Maps (NCA) in Stage 0 of any new greenfield SCIS program. Ensures deterministic structure, metric obligations on all elements, and no premature logic or dependencies.
+
+---
 
 # **Greenfield Component Map Maker (With Metrics)**
 
@@ -26,7 +31,7 @@ It ensures that:
 This file applies to:
 
 * New programs only (A1+)
-* Stage S0 only
+* Stage 0 only
 * Pre-implementation planning
 
 It explicitly **does not**:
@@ -46,10 +51,10 @@ Metrics are **declared as obligations only**.
 
 The LLM may read **only** the following files:
 
-1. **`A1p0s0f0.md`**
+1. **`A#p0s0f0.md`**
    *Greenfield Start — intent, goals, constraints, users, metric commitments*
 
-2. **`A1p0s0f1.md`**
+2. **`A#p0s0f10.md`**
    *Program File Map — phases, sections, code-bearing locations*
 
 3. **This file**
@@ -74,12 +79,12 @@ For **each section that contains code**, generate:
 ### Mandatory
 
 * **One Section Component Map**
-  `A1p#s#f#.toon`
+  `A#p#s#f#.toon`
 
 ### Optional (only if needed)
 
 * **One Section Non-Component Map**
-  `A1p#s#f#.toon`
+  `A#p#s#f#.toon`
 
 No maps are generated for non-code sections.
 
@@ -139,7 +144,7 @@ A **component (CA)** is a *stable unit of responsibility* that:
 Each **component entry** must include:
 
 * **Component ID**
-  `CA1p#s#f#.#` (stable, permanent)
+  `CA#p#s#f#.#` (stable, permanent)
 
 * **Title**
   Human-readable name
@@ -148,7 +153,7 @@ Each **component entry** must include:
   One sentence, *no logic*
 
 * **Stage Declared**
-  Always `S0`
+  Always `Stage 0`
 
 * **Owning Section**
   `s#`
@@ -195,7 +200,7 @@ Non-Components (NCA) include:
 
 They:
 
-* Receive IDs (`NCA1p#s#f#.#`)
+* Receive IDs (`NCA#p#s#f#.#`)
 * Are section-scoped
 * Do not get NCCFs
 * Are not executable units
@@ -246,9 +251,9 @@ IDs exist for **traceability, metrics correlation, and supportability**, not aes
 
 ---
 
-## 11. Metrics Discipline Rules (S0-Safe)
+## 11. Metrics Discipline Rules (Stage 0-Safe)
 
-At P0:
+At Stage 0:
 
 * Metrics are **declared as obligations only**
 * No metric collection is defined
@@ -317,5 +322,5 @@ SCIS builds:
 > Code last**
 
 ---
-
+End File
 
