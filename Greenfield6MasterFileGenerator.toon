@@ -1,82 +1,66 @@
 # LLM friendly url: https://raw.githubusercontent.com/MrTrentDaVinci/SCIS/main/Greenfield6MasterFileGenerator.toon
+# Greenfield6MasterFileGenerator.toon - Greenfield Master File Generator Template
+
+**Purpose**: Serves as the authoritative support template and master instruction set for LLMs to generate all remaining files in a new greenfield SCIS program. Uses minimal inputs (Program Summary, File Map, Component/Non-Component Registries) to deterministically produce maps, NCCF, logic, dependencies, and later-phase files.
+
+---
+
 # TOON File: `Greenfield Master File Generator`
 
 **Purpose:**
-Generate **all remaining A1+ SCIS files** for a new Greenfield project using minimal input: the initial Stage 0 files (`f0` and `f1`) plus component/non-component registries and any prior Phase 1/logic outputs.
+Generate **all remaining A#p# SCIS files** for a new Greenfield project using minimal input: the initial Stage 0 files (Program Summary and File Map) plus Component/Non-Component Registries and any prior logic outputs.
 
 ---
 
 ## **Inputs (User-provided)**
 
-1. `A1p0s0f0.md` – Greenfield Start / Program Summary
-2. `A1p0s0f1.md` – Flat File Map
-3. `A1p0s0f4.toon` – Component Map Entry
-4. `A1p0s0f5.toon` – Non-Component Map Entry
-5. *(Optional)* `A1p1s1f2.toon` – Legacy Mapping (if remaking old program)
-6. *(Optional)* `A1p0s0f9.toon` – Logic Determinization Map (if pre-generated)
+1. `A#p0s0f0.md` – Greenfield Start / Program Summary
+2. `A#p0s0f1.md` – File Map
+3. `A#p0s0f3.toon` – Component Registry (or equivalent)
+4. `A#p0s0f8.toon` – Non-Component Registry (if needed)
+5. *(Optional)* Legacy Mapping (for brownfield elements)
+6. *(Optional)* Pre-generated Logic Map (A#p0s0f5.md)
 
 ---
 
 ## **Outputs**
 
-This TOON file can generate any of the following:
+This TOON file can guide generation of any of the following:
 
-### **Stage 0 – Entry, Maps, NCCF, Logic**
+### **Stage 0 – Maps, NCCF, Logic, Metrics**
 
-* `A1p0s0f8.md` – Logic Map Explainer
-* `A1p0s0f9.toon` – Logic Determinization Map
-* `A1p0s0f10.toon` – Program MEM Entry
-* `A1p0s0f7.toon` – NCCF Template
-* `A1p0s0f11.md` – File Header Template
-* `A1p0s0f12.md` – Phase-Lock Rules
-* `A1p0s0f13.md` – Deterministic Generation Rules
+* `A#p0s0f2.md` – Sub-Maps / Section Breakdown
+* `A#p0s0f4.md` – NCCF (Non-Code Contract Framework)
+* `A#p0s0f5.md` – Logic Map
+* `A#p0s0f6.md` – Dependency Map
+* `A#p0s0f7.md` – Metrics Map
+* `A#p0s0f9.md` – Program-Specific Header Template (if needed)
 
-### **Stage 1 – Dependencies & Legacy Analysis**
+### **Stage 1 – Dependencies & Analysis**
 
-* `A1p1s1f0.toon` – Program Internal Dependency Map
-* `A1p1s1f1.toon` – Section-to-Section Dependency Map
-* `A1p1s1f2.toon` – Legacy Mapping
-* `A1p1s1f3.toon` – Cross-Program Dependencies
+* `A#p1s1f0.toon` – Internal Dependency Map
+* `A#p1s1f1.toon` – Section-to-Section Dependency Map
+* `A#p1s1f2.toon` – Legacy or Cross-Program Mapping
 
-### **Stage 2 – Core Components / Backend**
+### **Stage 2 – Core Implementation**
 
-* `A1p2s2f0.md` – Section Summary / Purpose
-* `A1p2s2f1.toon` – Component Registry
-* `A1p2s2f2.toon` – Non-Component Registry
-* `A1p2s2f3.py` – Core Backend Scripts / Services
-* `A1p2s2f4.json` – Component-Specific NCCF Instances
+* `A#p2s0f0.py` – Core Code / Backend Scripts
+* `A#p2s0f1.json/toon` – Component-Specific Contracts or Registries
 
-### **Stage 3 – UI / API / MCP**
+### **Stage 3 – Integration / External**
 
-* `A1p3s3f0.md` – Section Summary / Purpose
-* `A1p3s3f1.toon` – Component Registry (UI/Frontend)
-* `A1p3s3f2.toon` – MCP Handler Registry
-* `A1p3s3f3.py / ts / go` – Frontend Scripts / UI Logic
-* `A1p3s3f4.json` – NCCF Instances for UI/API Components
-* `A1p3s3f5.md` – API & MCP Integration Notes
+* `A#p3s0f0.py` – MCP / API Handlers
+* `A#p3s0f1.md` – Integration Notes
 
-### **Stage 4 – Testing & Debugging**
+### **Stage 4 – Testing & Safety**
 
-* `A1p4s6f0.md` – Testing Plan / Test Cases
-* `A1p4s6f1.py` – Test Runner / Safe Execution Wrapper
-* `A1p4s6f2.toon` – MEM Test Registry
-* `A1p4s6f3.py` – Debug Tools / Error Mapping / Fix Loops
-* `A1p4s6f4.md` – Debugging Guidelines / Phase Completion Notes
+* `A#p4s0f0.md` – Testing Plan
+* `A#p4s0f1.py` – Safe Execution / Test Wrappers
 
-### **Stage 5+ – Extensions / Optional Modules**
+### **Documentation / Glossary**
 
-* `A1p5s7f0.md` – Optional Feature Documentation
-* `A1p5s7f1.toon` – Component Registry for Extensions
-* `A1p5s7f2.toon` – Non-Component Registry for Extensions
-* `A1p5s7f3.py / ts / go` – Optional / Plugin Scripts
-* `A1p5s7f4.json` – NCCF Instances for Extension Components
-
-### **Documentation / Glossary / Definitions**
-
-* `A1p8s8f0.md` – Program Documentation & Diagrams
-* `A1p8s8f1.toon` – Component-to-Asset Mappings
-* `A1p9s9f0.md` – Glossary & Definitions Index
-* `A1p9s9f1.toon` – Constants / Term Reference Table
+* `A#p9s0f0.md` – Program Glossary & Definitions
+* `A#p9s0f1.md` – Overall Documentation
 
 ---
 
@@ -84,30 +68,36 @@ This TOON file can generate any of the following:
 
 1. **Read Inputs:**
 
-   * Load `f0` and `f1` for program purpose, structure, and file map.
-   * Load `f4` and `f5` for complete component/non-component inventories.
-   * Optional: load `f9.toon` for pre-generated logic maps or `f2.toon` for legacy mappings.
+   * Load Program Summary and File Map for purpose and structure.
+   * Load Component/Non-Component Registries for complete inventories.
+   * Optional: Load any pre-generated logic or legacy maps.
 
-2. **Determine Dependencies & Logic:**
+2. **Determine Structure & Contracts:**
 
-   * Map component-to-component and section-to-section dependencies.
-   * Generate logic flows for both human-readable and machine-readable formats.
+   * Derive dependencies, logic flows, and metric obligations from inputs.
+   * Ensure alignment with NCCF and prior declarations.
 
 3. **Generate Files in Order:**
 
-   * Stage 0 → Stage 1 → Stage 2 → Stage 3 → Stage 4 → Stage 5 → Documentation/Glossary
-   * Ensure all cross-references (IDs, sections, dependencies) are consistent.
+   * Complete Stage 0 first → Stage 1 → Implementation → Testing → Documentation
+   * Include full SCIS headers on every generated file.
+   * Use stable IDs and cross-references.
 
 4. **Validation:**
 
-   * Cross-check all generated files against `f1` (flat file map) to ensure completeness.
-   * Highlight missing components or inconsistencies for user review.
+   * Cross-check against File Map for completeness.
+   * Flag inconsistencies or missing metric obligations for review.
+   * Recommend post-generation validation with tools.
 
 ---
 
 ## **Usage Notes**
 
 * This TOON file serves as a **single master instruction set** for an LLM.
-* You may generate **one file at a time**, in any order, using the same inputs.
-* Can be **re-run iteratively** after adding new components, sections, or extensions.
-* Supports deterministic generation to ensure reproducibility across project updates.
+* Generate **one file at a time** or in batches, using the same inputs.
+* Supports **iterative re-runs** after updates or extensions.
+* Ensures deterministic, map-first generation with full observability.
+
+---
+
+## End of File
