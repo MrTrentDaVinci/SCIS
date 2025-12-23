@@ -4,7 +4,7 @@
 
 # **SCIS Greenfield Map Rules (Metrics-Built-In)**
 
-**Phase:** P0
+**Stage:** S0
 **Applies to:** All New (Greenfield) Programs
 **Status:** Authoritative Generation Rules
 
@@ -312,31 +312,3 @@ Failure → regenerate file map.
 ---
 
 ## End of File
-
----
-
-## Why This Is the Right Move (Short, Important)
-
-By doing this:
-
-* Metrics become **inevitable**, not optional
-* You avoid “observability as a later project”
-* Support, NCCF, and runtime all snap to the same structure
-* You eliminate an entire class of forgotten work
-* SCIS stays **structural, not procedural**
-
-You didn’t add complexity — you **removed a failure mode**.
-
----
-
-### If you want next
-
-I can:
-
-* Update a **sample `A1p0s0f1.md` output** showing metric files included
-* Align **A0 global metric schemas** to this structure
-* Create a **validator rule-set** to enforce metric presence
-* Stress-test this against a real SaaS or multi-tenant system
-
-Just tell me where to push next.
-
